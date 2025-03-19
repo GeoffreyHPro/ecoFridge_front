@@ -1,0 +1,33 @@
+<body class="image-bg d-flex justify-content-center align-items-center vh-100">
+    <div class="content">
+        <div class="container p-5" style="background-color: white;">
+            <h1 class="pb-5" style="text-align: center; color: black;
+    border-radius: 0px;
+    "><b>Sign Up for EcoFridge</b>
+            </h1>
+            <form [formGroup]="formSignup">
+                <div class="mb-1">
+                    <label class="form-label">Mail</label>
+                    <input width="50" id="email" placeholder="enter your mail..." type="email" class="form-control"
+                        formControlName="mail">
+                    <div *ngIf="signUpEmailError && signUpEmailError.length >0" style="color:red">
+                        {{signUpEmailError}}
+                    </div>
+                    <label class="form-label mt-3">Password</label>
+                    <input placeholder="enter your password..." type="password" class="form-control"
+                        formControlName="password">
+                    <div *ngIf="signUpPasswordError && signUpPasswordError.length >0"
+                        style="color:red; margin-bottom: 0;">
+                        {{signUpPasswordError}}
+                    </div>
+                    <div class="d-grid mt-3">
+                        <button (click)="handleSignup()" type="submit" class="btn" style="background-color: #4d5a74; color: white;">S'inscrire</button>
+                    </div>
+                </div>
+            </form>
+            <p class="text-center mt-3">
+                Do you have already an account ? <a href="home">SignIn</a>
+            </p>
+        </div>
+    </div>
+</body>

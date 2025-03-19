@@ -1,0 +1,28 @@
+<div id="principal">
+
+    <app-navbar></app-navbar>
+
+    <body style="background-color: transparent;">
+        <div class="container h-100 mt-4">
+            <div class="d-flex justify-content-center h-100 w-70">
+                <div class="search">
+                    <input [(ngModel)]="barCode" class="form-control" class="search_input" type="text" name=""
+                        placeholder="Search here...">
+                    <a (click)="searchFood()" class="search_icon"></a>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="errorMessage.length > 0 && errorMessage == 'The food is not found'">
+            <div>
+                <p style="font-weight: bold; text-align: center;">The food is not found ! </p>
+                <app-form-add-food></app-form-add-food>
+            </div>
+        </div>
+        <div *ngIf="food.idFood != 0">
+            <div>
+                <app-form-update-food [food]="food"></app-form-update-food>
+            </div>
+        </div>
+    </body>
+</div>

@@ -1,0 +1,11 @@
+<app-navbar></app-navbar>
+
+<div id="background_home">
+
+        <body>
+                <app-food-carroussel [listFoodbatches]="listExpiredFoodbatches"
+                        [typeListFoodBatch]="'expired'"></app-food-carroussel>
+                <app-food-carroussel [listFoodbatches]="listSoonExpiredFoodbatches"
+                        [typeListFoodBatch]="'soon expired'"></app-food-carroussel>
+        </body>
+</div>

@@ -1,0 +1,30 @@
+<div class="">
+    <div class="container p-5" style="background-color: white;">
+        <h1 class="mb-1" style="text-align: center; color: black;
+        border-radius: 0px;
+        "><b>Sign In </b>
+        </h1>
+
+        <form [formGroup]="formLogin">
+            <div class="mb-1">
+                <label class="form-label mt-3" for="email">Mail</label>
+                <input id="mail" name="mail" width="50" placeholder="enter your mail..." type="email"
+                    class="form-control" formControlName="mail">
+                <div *ngIf="signInEmailError && signInEmailError.length >0" style="color:red">
+                    {{signInEmailError}}
+                </div>
+                <label class="form-label mt-3">Password</label>
+                <input placeholder="enter your password..." type="password" class="form-control"
+                    formControlName="password">
+                <div *ngIf="signInPasswordError && signInPasswordError.length >0" style="color:red; margin-bottom: 0;">
+                    {{signInPasswordError}}
+                </div>
+                <div class="d-flex justify-content-between mt-3">
+                    <button (click)="handleLogin()" class="btn mt-3" style="background-color: #4d745d; color: white;">Login</button>
+                    <button (click)="signUpRedirection()" class="btn mt-3"
+                        style="background-color: maroon; color: white;">SignUp</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
