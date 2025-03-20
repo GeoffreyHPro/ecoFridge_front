@@ -28,7 +28,7 @@ export class FormAddFoodComponent {
   }
 
   handleAddFood() {
-    this.foodService.addFood(this.formAddFood.value.foodBarcode).subscribe(
+    this.foodService.addFood(this.formAddFood.value.foodBarcode, this.formAddFood.value.foodName, this.formAddFood.value.foodDescription).subscribe(
       response => {
         this.showMessage("Add food", "The food given is correctly added");
         this.addFoodErrorMessage = "";
