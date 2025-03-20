@@ -39,14 +39,14 @@ export class FoodService {
     return this.http.get(`${this.baseUrl}/image/${filename}`, { headers, responseType: 'blob' });
   }
 
-  addFood(bareCode: string): Observable<any> {
+  addFood(bareCode: string, name: string, description: string): Observable<any> {
     const token = localStorage.getItem("Token")!
-
+    const bodyJSON = { name: name, description: description }
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`
     });
 
-    return this.http.post(`${this.baseUrl}/food/${bareCode}`, null, { headers });
+    return this.http.post(`${this.baseUrl}/food/${bareCode}`, bodyJSON, { headers });
   }
 
   updateFood(bareCode: string, name: string, description: string): Observable<any> {
