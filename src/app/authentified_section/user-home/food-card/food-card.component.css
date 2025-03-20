@@ -13,4 +13,9 @@
     background-color: #4d745d;
     width: 100%;
     color: white;
+    height: 120px;
+}
+
+img {
+    height: 200px;
 }
