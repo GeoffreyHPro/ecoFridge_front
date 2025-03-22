@@ -18,7 +18,7 @@
 </ng-template>
 
 <div *ngIf="listFoodbatches.length > 0; else noExpiredFoodbatchesData" class="container mt-5 mb-3 scrollable-container">
-    <div class="card-group card-group-scroll">
+    <div class="card-group card-group-scroll flex-md-nowrap flex-column flex-md-row">
         <div *ngFor="let foodBatch of listFoodbatches" class="card">
             <app-food-card [foodBatch]="foodBatch"></app-food-card>
         </div>

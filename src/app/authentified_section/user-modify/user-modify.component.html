@@ -6,9 +6,8 @@
         <div class="container h-100 mt-4">
             <div class="d-flex justify-content-center h-100 w-70">
                 <div class="search">
-                    <input [(ngModel)]="barCode" class="form-control" class="search_input" type="text" name=""
+                    <input (keyup)="searchFood()" [(ngModel)]="barCode" class="form-control" class="search_input" type="text" name=""
                         placeholder="Search here...">
-                    <a (click)="searchFood()" class="search_icon"></a>
                 </div>
             </div>
         </div>

@@ -1,7 +1,8 @@
 #background_home {
     background-image: url("../../../assets/stone-surface-background.jpg");
     background-size: cover;
-    height: 1000px;
+    min-height: 100vh;
+    height: 100%;
 }
 
 body {
