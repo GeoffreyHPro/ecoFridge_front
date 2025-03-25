@@ -29,7 +29,7 @@ export class UserHomeComponent {
         console.log(resp.data)
 
         this.listExpiredFoodbatches.forEach((foodBatch) => {
-          this.foodService.getImage(foodBatch.food.image).subscribe((blob) => {
+          this.foodService.getImage(foodBatch.food.bareCode).subscribe((blob) => {
             const objectUrl = URL.createObjectURL(blob);
             foodBatch.safeImageURL = this.sanitizer.bypassSecurityTrustUrl(objectUrl);
           })
@@ -49,7 +49,7 @@ export class UserHomeComponent {
         console.log(resp.data)
 
         this.listSoonExpiredFoodbatches.forEach((foodBatch) => {
-          this.foodService.getImage(foodBatch.food.image).subscribe((blob) => {
+          this.foodService.getImage(foodBatch.food.bareCode).subscribe((blob) => {
             const objectUrl = URL.createObjectURL(blob);
             foodBatch.safeImageURL = this.sanitizer.bypassSecurityTrustUrl(objectUrl);
           })

@@ -39,7 +39,7 @@ export class FormUpdateFoodComponent {
   }
 
   searchFood() {
-    this.foodService.getImage(this.food.image).subscribe((blob) => {
+    this.foodService.getImage(this.food.bareCode).subscribe((blob) => {
       const objectUrl = URL.createObjectURL(blob);
       this.food.safeImageURL = this.sanitizer.bypassSecurityTrustUrl(objectUrl);
       this.imageUrl = this.food.safeImageURL;

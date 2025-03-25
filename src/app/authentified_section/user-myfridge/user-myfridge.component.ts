@@ -24,7 +24,7 @@ export class UserMyfridgeComponent {
         console.log(response)
 
         this.food.forEach((element) => {
-          this.foodService.getImage(element.image).subscribe((blob) => {
+          this.foodService.getImage(element.bareCode).subscribe((blob) => {
             const objectUrl = URL.createObjectURL(blob);
             element.safeImageURL = this.sanitizer.bypassSecurityTrustUrl(objectUrl);
           })
