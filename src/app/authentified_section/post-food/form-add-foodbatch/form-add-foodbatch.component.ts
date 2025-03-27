@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FoodService } from '../../../services/food.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { PopupMessageComponent } from '../../../utils/popup-message/popup-message.component';
@@ -36,11 +35,8 @@ export class FormAddFoodbatchComponent {
       this.foodBatchService.addFoodBatch(this.formAddFoodBatch.value.foodBarcode,
         this.formAddFoodBatch.value.foodQuantity, this.formAddFoodBatch.value.expirationDate + "T00:00:00").subscribe(
           response => {
-            if (response.status == 201) {
-              this.showMessage("Add foodbatch", "The foodbatch is correctly added");
-              this.addFoodBatchErrorMessage = "";
-              console.log(response)
-            }
+            this.showMessage("Add foodbatch", "The foodbatch is correctly added");
+            this.addFoodBatchErrorMessage = "";
           }, (error) => {
             if (error.status == 409) {
               this.addFoodBatchErrorMessage = "The food is not there, create it";
