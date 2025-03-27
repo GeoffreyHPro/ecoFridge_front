@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { DataFoodBatches } from '../responses/DataFoodBatchesInterface';
@@ -29,7 +29,7 @@ export class FoodBatchesService {
     return this.http.get<DataFoodBatches>(`${this.baseUrl}/foodbatch/soonExpired`, { headers });
   }
 
-  addFoodBatch(bareCode: string, quantity: Number, expirationDate: string): Observable<any> {
+  addFoodBatch(bareCode: string, quantity: Number, expirationDate: string): Observable<HttpResponse<any>> {
     const token = localStorage.getItem("Token")!
     const bodyUser = { quantity: quantity, expirationDate: expirationDate }
     const headers = new HttpHeaders({
