@@ -1,27 +1,35 @@
-# Angular
+# EcoFridge - Front (Angular)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.6.
+This project allows to register your food in an account. You can save your food perishable and unperishable. Some informations are given to know which food is expired.... 
+This project is to reduce food waste and optimize the management of your "fridge".
 
-## Development server
+# 👩‍💻 Technologies
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+| Front - Angular | version (works) | 
+| --- | --- |
+| npm | 10.5.0 |
 
-## Code scaffolding
+# ⚡️ Standard Execution
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Before starting front app, start Backend Ecofridge in https://github.com/GeoffreyHPro/ecoFridge_back
 
-## Build
+```bash
+cd front/angular
+npm start
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+URL of website: http://localhost:4200/home
 
-## Running unit tests
+# ☁️ Docker Execution
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+To create image Docker, execute this command
 
-## Running end-to-end tests
+```bash
+docker build -t front_angular_ecofridge .
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+To execute application, execute this command. 4200:4200 is port and default port, so change it if you execute application in another port.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+docker run -p 4200:4200 front_angular_ecofridge
+```    
